@@ -2,6 +2,7 @@ public class BookCopy
 {
   private final String title;
   private boolean borrowed;
+  private int borrowCount;
 
   public BookCopy(String title)
   {
@@ -11,6 +12,7 @@ public class BookCopy
     }
     this.title = title;
     this.borrowed = false; // Et nyt eksemplar er ledigt
+    this.borrowCount = 0;
   }
 
   public String getTitle()
@@ -25,6 +27,7 @@ public class BookCopy
       return false;
     }
     borrowed = true;
+    borrowCount++;
     return true;
   }
 
@@ -41,5 +44,8 @@ public class BookCopy
   public boolean isBorrowed()
   {
     return borrowed;
+  }
+  public int getBorrowCount() {
+    return borrowCount;
   }
 }
