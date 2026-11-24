@@ -28,9 +28,14 @@ public class BookCopy
     return true;
   }
 
-  public void returnBook()
+  public boolean returnBook()
   {
+    if (!borrowed)
+    {
+      return false;
+    }
     borrowed = false;
+    return true;
   }
 
   public boolean isBorrowed()
@@ -38,4 +43,3 @@ public class BookCopy
     return borrowed;
   }
 }
-
